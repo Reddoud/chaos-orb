@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CHAOS ORB — an oracle of dubious wisdom</title>
+<meta name="description" content="Ask the Chaos Orb anything. Receive cosmic, questionable advice." />
+<meta property="og:title" content="CHAOS ORB" />
+<meta property="og:description" content="An oracle of dubious wisdom. Ask anything." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='26' fill='%23ff00aa'/%3E%3Ccircle cx='24' cy='24' r='8' fill='%23fff' opacity='0.5'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="stars" id="stars" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">◎</span>
+    <span class="brand-name">CHAOS&nbsp;ORB</span>
+  </div>
+  <div class="tagline">an oracle of <em>dubious</em> wisdom</div>
+</header>
+
+<main class="stage">
+  <div class="orb-wrap" id="orbWrap">
+    <div class="orb" id="orb">
+      <div class="orb-core"></div>
+      <div class="orb-ring orb-ring-1"></div>
+      <div class="orb-ring orb-ring-2"></div>
+      <div class="orb-ring orb-ring-3"></div>
+      <div class="orb-glyph" id="orbGlyph">?</div>
+    </div>
+    <div class="orb-shadow"></div>
+  </div>
+
+  <section class="dialog" aria-live="polite">
+    <div class="prophecy" id="prophecy">speak your question, mortal.</div>
+    <div class="sig" id="sig"></div>
+  </section>
+
+  <form class="ask" id="askForm" autocomplete="off">
+    <input
+      id="askInput"
+      class="ask-input"
+      type="text"
+      maxlength="240"
+      placeholder="type your question…"
+      aria-label="Your question for the Chaos Orb"
+      required
+    />
+    <button class="ask-btn" type="submit" id="askBtn">
+      <span>CONSULT</span>
+    </button>
+  </form>
+
+  <div class="actions">
+    <button class="ghost" id="rerollBtn" type="button" disabled>↻ re-divine</button>
+    <button class="ghost" id="shareBtn" type="button" disabled>⇪ share</button>
+    <button class="ghost" id="muteBtn" type="button" aria-pressed="false">🔊 sound: on</button>
+  </div>
+</main>
+
+<footer class="footer">
+  <span>answers randomized from the void. not real advice.</span>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<canvas id="shareCanvas" width="1200" height="630" aria-hidden="true"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
